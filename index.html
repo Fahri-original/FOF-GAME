@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOF GAMES</title>
+    <!-- Tambahkan favicon -->
+    <link rel="icon" href="favicon.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        nav a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+        .container {
+            padding: 20px;
+        }
+        /* Gaya untuk gambar pembuka */
+        .intro-image {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .search-bar {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .search-bar input {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .game {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .game img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .game-details {
+            flex-grow: 1;
+        }
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .download-button:hover {
+            background-color: #218838;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Selamat datang di FOF GAMES</h1>
+    <p>Website ini menampilkan game free-to-download saya!</p>
+</header>
+
+<!-- Navigasi Tab -->
+<nav>
+    <a href="index.html">Beranda</a>
+    <a href="download.html">Download</a>
+    <a href="tentang.html">Tentang</a>
+</nav>
+
+<div class="container">
+
+    <!-- Gambar Pembuka di Tab Beranda -->
+    <img src="gambar-pembuka.jpg" alt="Gambar Pembuka" class="intro-image">
+
+    <p>Selamat datang di FOF GAMES! Di sini, kamu bisa menemukan berbagai game yang saya buat dan dapatkan secara gratis! Jelajahi game-game saya di halaman Download dan nikmati keseruan yang telah saya siapkan.</p>
+    <p>Terima kasih telah berkunjung! Jangan lupa untuk mengecek halaman Tentang untuk mengenal lebih jauh tentang saya dan proyek yang saya kerjakan.</p>
+
+</div>
+
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const games = document.querySelectorAll('.game');
+
+    searchInput.addEventListener('input', function () {
+        const query = searchInput.value.toLowerCase();
+        games.forEach(game => {
+            const name = game.getAttribute('data-name').toLowerCase();
+            if (name.includes(query)) {
+                game.style.display = 'flex';
+            } else {
+                game.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+<!-- Footer dengan Copyright -->
+<footer>
+    <p>&copy; 2024 FOF GAMES | Dibuat dengan Cinta</p>
+</footer>
+
+</body>
+</html>

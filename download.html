@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOF GAMES</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        nav a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+        .container {
+            padding: 20px;
+        }
+        .search-bar {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .search-bar input {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .game {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .game img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .game-details {
+            flex-grow: 1;
+        }
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .download-button:hover {
+            background-color: #218838;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Selamat datang di FOF GAMES</h1>
+    <p>Website ini menampilkan game free-to-download saya!</p>
+</header>
+
+<!-- Navigasi Tab -->
+<nav>
+    <a href="index.html">Beranda</a>
+    <a href="download.html">Download</a>
+    <a href="tentang.html">Tentang</a>
+</nav>
+
+<div class="container">
+
+    <!-- Kolom Pencarian di Tab Download -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Cari game...">
+    </div>
+
+    <!-- Game 1 -->
+    <div class="game" data-name="Plants Vs Zombies Fusion">
+        <img src="gambar-game1.jpg" alt="Gambar Game 1">
+        <div class="game-details">
+            <h3>Game 1: Plants Vs Zombies Fusion</h3>
+            <p>Ini adalah plants vs zombies yang dimodifikasi. Tumbuhannya bisa digabungkan satu sama lain dan masih banyak lagi fitur yang ditambahkan.</p>
+            <a class="download-button" href="https://drive.google.com/uc?id=1NPu6ZtKhTtPxM5TwaeCjiL5W1vhZm4em&export=download" download>Download PC/Laptop</a>
+            <a class="download-button" href="https://drive.google.com/uc?id=1eGg7sqJKAyUz2sSQyPSyHxJVkndrHtpg&export=download" download>Download Android</a>
+        </div>
+    </div>
+
+    <!-- Game 2 -->
+    <div class="game" data-name="Motel Manager Simulator">
+        <img src="gambar-game2.jpg" alt="Gambar Game 2">
+        <div class="game-details">
+            <h3>Game 2: Motel Manager Simulator</h3>
+            <p>Ini adalah pekerjaan untuk menjadi manajer hotel. Kalau lag bisa download Fix lag.</p>
+            <a class="download-button" href="https://drive.google.com/uc?id=1ECybJlDa29ar4sAwHZgnedaPcFYAeuBE&export=download" download>Download Game</a>
+            <a class="download-button" href="https://drive.google.com/uc?id=1U-TdEzlZkAuxxRuC6oAYVwS0fjsMJf9q&export=download" download>Fix Lag</a>
+        </div>
+    </div>
+
+    <!-- Game 3 -->
+    <div class="game" data-name="The Forest">
+        <img src="gambar-game3.jpg" alt="Gambar Game 3">
+        <div class="game-details">
+            <h3>Game 3: The Forest</h3>
+            <p>Deskripsi singkat tentang Game 3. Unduh dan nikmati keseruannya!</p>
+            <a class="download-button" href="https://drive.google.com/uc?id=1_ym_N7r8VmGgWe-H0tcFq2YYD4U7Tw2E&export=download" download>Download Game</a>
+        </div>
+    </div>
+
+    <!-- Game 4 -->
+    <div class="game" data-name="Jurassic Park Operation Genesis">
+        <img src="gambar-game4.jpg" alt="Gambar Game 4">
+        <div class="game-details">
+            <h3>Game 4: Jurassic Park Operation Genesis (JPOG)</h3>
+            <p>Kamu akan membangun taman dinosaurus dan menjaganya. Cobalah game ini, pasti seru!</p>
+            <a class="download-button" href="https://drive.google.com/uc?id=1wgoscAXYEbuD0vHBWbx_vNdZ8buN6DuN&export=download" download>Download Game</a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const games = document.querySelectorAll('.game');
+
+    searchInput.addEventListener('input', function () {
+        const query = searchInput.value.toLowerCase();
+        games.forEach(game => {
+            const name = game.getAttribute('data-name').toLowerCase();
+            if (name.includes(query)) {
+                game.style.display = 'flex';
+            } else {
+                game.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 FOF GAMES | Dibuat dengan Cinta</p>
+</footer>
+
+</body>
+</html>
